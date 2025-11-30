@@ -562,6 +562,17 @@ Answer the questions.""",
     sep="<|im_end|>",
 )
 
+conv_llm_jp = Conversation(
+    system="以下は、タスクを説明する指示です。要求を適切に満たす応答を書きなさい。",
+    roles=("ユーザー", "システム"),
+    version="v1",
+    messages=(),
+    offset=0,
+    sep_style=SeparatorStyle.TWO,
+    sep=" ",
+    sep2="<EOD|LLM-jp>",
+)
+
 default_conversation = conv_vicuna_v0
 conv_templates = {
     "default": conv_vicuna_v0,
@@ -590,6 +601,7 @@ conv_templates = {
     "qwen_2": conv_qwen,
     "qwen_2_5": conv_qwen_2_5,
     "gemma_instruct": conv_gemma_instruct,
+    "llm_jp": conv_llm_jp,
 }
 
 
